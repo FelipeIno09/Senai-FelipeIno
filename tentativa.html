@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let passou =[]
+        let alunos = [];
+        for (let i = 0; i <= 2; i++) {
+            let alu = prompt("Digite o " + (i + 1) + "º aluno:");
+            alunos.push(alu);
+        }
+
+        let numeros = [];
+        for (let i = 0; i <= 2; i++) {
+            numeros[i] = [];
+            for (let j = 0; j <= 2; j++) {
+                let num = parseInt(prompt("Digite a " + (j + 1) + "ª nota do aluno " + alunos[i]));
+                numeros[i].push(num); // Armazena a nota individual
+            }
+        }
+
+        document.write("As notas originais são: <br>");
+        for (let i = 0; i < numeros.length; i++) {
+            document.write(alunos[i] + ": " + numeros[i].join(", ") + "<br>");
+        }
+
+        document.write("<br>A soma das notas de cada aluno é:<br>");
+        for (let i = 0; i < numeros.length; i++) {
+            let soma = numeros[i].reduce(function(total, valor) {
+                return total + valor;
+            }, 0);
+            document.write(alunos[i] + ": " + soma + "<br>");
+        }
+
+        document.write("<br>As notas aprovadas (maiores que 21) são:<br>");
+        for (let i = 0; i < numeros.length; i++) {
+            let aprovadas = numeros[i].filter(function(valor) {
+                return valor > 21;
+            });
+            document.write(alunos[i] + ": " + aprovadas.join("✅ ") + "<br>");
+        }
+        
+    </script>
+</body>
+</html>
