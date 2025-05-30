@@ -6,6 +6,21 @@
     <title>Git-GItHub</title>
 </head>
 <body>
-    <h1>Ola eduardo</h1>
+    <h5>ola eduardo</h5>
+    <button onclick="changeBackgroundcolor()">dark-mode</button>
+    <script>
+    function changeBackgroundcolor() {
+     let  cor = "rgb(0, 0, 0)"; //cor preto
+        let cor2 = "rgb(255, 255, 255)"; //cor branco
+        if (document.body.style.backgroundColor === cor) {
+            cor = cor2; // se a cor for preta, muda para branco
+        } else {
+            cor = "rgb(0, 0, 0)"; // se não for preta, muda para preto
+        }
+     document.body.style.backgroundColor = cor;
+        document.body.style.color = (cor === "rgb(0, 0, 0)") ? "white" : "black"; // muda a cor do texto
+
+    }
+    </script>
 </body>
 </html>
